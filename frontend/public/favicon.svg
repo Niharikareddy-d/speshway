@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Background circle for favicon compatibility -->
+  <rect width="200" height="200" fill="white" rx="20"/>
+  
+  <!-- Green smartphone body -->
+  <rect x="60" y="20" width="80" height="140" rx="12" fill="#22C55E" stroke="#16A34A" stroke-width="2"/>
+  
+  <!-- Speaker/camera cutout at top -->
+  <ellipse cx="100" cy="35" rx="8" ry="4" fill="white"/>
+  
+  <!-- Circular button at bottom -->
+  <circle cx="100" cy="145" r="6" fill="white"/>
+  
+  <!-- Dark blue/purple house roof (triangle) -->
+  <path d="M 50 50 L 100 20 L 150 50 L 150 90 L 50 90 Z" fill="#1E3A8A" opacity="0.95"/>
+  
+  <!-- Power button icon inside screen area -->
+  <g transform="translate(100, 70)">
+    <!-- Circle part of power button -->
+    <circle cx="0" cy="0" r="12" fill="none" stroke="#1E3A8A" stroke-width="3"/>
+    <!-- Vertical line extending upward -->
+    <line x1="0" y1="0" x2="0" y2="-8" stroke="#1E3A8A" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Circuit board/signal lines below power button -->
+  <g transform="translate(100, 95)">
+    <rect x="-15" y="0" width="3" height="8" fill="#1E3A8A" rx="1.5"/>
+    <rect x="-8" y="2" width="3" height="12" fill="#1E3A8A" rx="1.5"/>
+    <rect x="-1" y="0" width="3" height="10" fill="#1E3A8A" rx="1.5"/>
+    <rect x="6" y="1" width="3" height="14" fill="#1E3A8A" rx="1.5"/>
+    <rect x="13" y="0" width="3" height="9" fill="#1E3A8A" rx="1.5"/>
+  </g>
+  
+  <!-- Wi-Fi signal waves (top right) -->
+  <g transform="translate(150, 30)">
+    <path d="M 0 10 Q -8 2 -8 10" stroke="#22C55E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 0 10 Q -12 0 -12 10" stroke="#22C55E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <path d="M 0 10 Q -16 -2 -16 10" stroke="#22C55E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
+
+

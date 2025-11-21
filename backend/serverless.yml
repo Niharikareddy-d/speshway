@@ -1,0 +1,75 @@
+service: speshway-backend
+frameworkVersion: '4'
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1
+  stage: dev
+  profile: default
+  httpApi:
+    cors:
+      allowedOrigins:
+        - http://niha-serverless-bucket.s3-website.ap-south-1.amazonaws.com
+      allowedHeaders:
+        - Content-Type
+        - Authorization
+      allowedMethods:
+        - GET
+        - POST
+        - PUT
+        - PATCH
+        - DELETE
+        - OPTIONS
+      allowCredentials: true
+  environment:
+    NODE_ENV: production
+    PORT: '5001'
+    JWT_SECRET: W3TU0zegI5pLv8Bq2Sc9mxMt1JD6KZdaHYOVhPfXAGQNRFwrCnobsy7ujlEki4
+    CLOUDINARY_CLOUD_NAME: charan12
+    CLOUDINARY_API_KEY: '478681192216688'
+    CLOUDINARY_API_SECRET: du1JrEvTmjfmDiDa-Yi9cfP4MWc
+    SMTP_HOST: smtp.gmail.com
+    SMTP_PORT: '587'
+    SMTP_EMAIL: pcharan214@gmail.com
+    SMTP_PASSWORD: nfks kmrm osdq pljy
+    FROM_EMAIL: pcharan214@gmail.com
+    USER_TABLE: SpeshwayUsers
+    CLIENTS_TABLE: SpeshwayClients
+    CONTACT_TABLE: SpeshwayContacts
+    SERVICES_TABLE: SpeshwayServices
+    PORTFOLIO_TABLE: SpeshwayPortfolio
+    TEAM_TABLE: SpeshwayTeam
+    GALLERY_TABLE: SpeshwayGallery
+    SENTENCE_TABLE: SpeshwaySentences
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:*
+      Resource: arn:aws:dynamodb:ap-south-1:*:table/Speshway*
+  versionFunctions: true
+package:
+  individually: true
+  excludeDevDependencies: true
+  patterns:
+    - handler.mjs
+    - handler.js
+    - index.js
+    - routes/**
+    - controllers/**
+    - config/**
+    - middleware/**
+    - models/**
+    - utils/**
+    - node_modules/**
+  artifactsS3KeyDirname: serverless/speshway-backend/dev/code-artifacts
+functions:
+  api:
+    handler: handler.main
+    timeout: 30
+    events:
+      - httpApi:
+          path: /{proxy+}
+          method: ANY
+    name: speshway-backend-dev-api
+resources: {}
+
